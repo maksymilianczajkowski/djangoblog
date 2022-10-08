@@ -19,12 +19,17 @@
         <a href="https://google.com">Link</a>
     </div>
 
+    {% comment %}
+    Odtąd wyświetla się lista postów.
+    {% endcomment%}
+
+    {% for post in posts %}
     <div>
-        <ul>
-            <li>Elementy listy</li>
-            <li>Inne elementy</li>
-            <li>Jeszcze inne</li>
+        <p>opublikowany: {{post.publish_date}}</p>
+        <h2><a href="">{{post.title}}</a></h2>
+        <em>{{post.text|linebreaksbr}}</em>
     </div>
+    {% endfor %}
 </ul>
 </body>
 </html>
